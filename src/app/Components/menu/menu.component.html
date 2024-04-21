@@ -1,0 +1,57 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        <img src="./assets/ide-logo.png"  width="60px" alt="Menu">
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <!-- paginas del menubar -->
+    <ion-menu-toggle>
+      <ion-list>
+        <ion-item  routerLink="/entrevista/home">
+          <ion-label>Inicio</ion-label>
+        </ion-item>
+        <ion-item  routerLink="/entrevista/evaluar-usuario">
+          <ion-label>Evaluación de Usuario</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-menu-toggle>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+        <ion-title>
+          <img src="./assets/ide-logo.png"  width="60px" alt="Menu">
+        </ion-title>
+      </ion-buttons>
+      <!-- perfil del usuario -->
+      <ion-buttons slot="end">
+        <ion-chip id="menuProfile">
+          <ion-avatar>
+            <img alt="Perfil" src="./assets/avatar.svg" />
+          </ion-avatar>
+          <ion-label>Chip Avatar</ion-label>
+        </ion-chip>
+        <!-- menu del perfil -->
+        <ion-popover trigger="menuProfile" [dismissOnSelect]="true" size="auto">
+          <ng-template>
+            <ion-list>
+              <ion-item (click)="logout()" [button]="true" [detail]="false">
+                <ion-icon name="log-out-outline" slot="start"></ion-icon>
+                Cerrar sesión
+              </ion-item>
+            </ion-list>
+          </ng-template>
+        </ion-popover>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-router-outlet></ion-router-outlet>
+  </ion-content>
+</div>

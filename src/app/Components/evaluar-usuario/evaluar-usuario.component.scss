@@ -1,0 +1,75 @@
+//manejo de archivos
+.file-upload {
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.upload-container {
+  position: relative;
+}
+
+.upload-container ion-icon {
+  font-size: 32px;
+  color: #007bff;
+}
+
+.upload-container .file-label {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.drop-zone {
+  border: 2px dashed #007bff;
+  border-radius: 8px;
+  padding: 40px;
+  margin-top: 20px;
+  text-align: center;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.drop-zone p {
+  margin: 0;
+}
+
+.drop-zone.drag-over {
+  background-color: #e6f7ff;
+}
+//---contenido
+/* Estilos personalizados para el ion-card */
+ion-card {
+  /* Ajustar el espaciado y el margen */
+  margin: 20px;
+  padding: 20px;
+
+  /* Añadir un sombreado sutil */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  /* Establecer un borde redondeado */
+  border-radius: 10px;
+}
+
+/* Estilos personalizados para el ion-card-header */
+ion-card-header {
+  /* Establecer un fondo y color de texto */
+  background-color: #007bff;
+
+}
+ion-card-title,ion-card-subtitle{
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Estilos personalizados para el ion-card-content */
+ion-card-content {
+  /* Añadir un ligero relleno */
+  padding-top: 20px;
+}
+
+/* Estilos personalizados para el ion-item */
+ion-item {
+  /* Eliminar el borde inferior */
+  --border-style: none;
+}

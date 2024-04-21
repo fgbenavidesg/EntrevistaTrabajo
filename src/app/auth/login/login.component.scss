@@ -1,0 +1,16 @@
+.login-card {
+  max-width: 400px; /* Ancho máximo del formulario */
+  margin: auto; /* Centrar el formulario en la pantalla */
+  border-radius: 10px; /* Borde redondeado */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.login-title {
+  font-size: 1.5rem; /* Tamaño de fuente del título */
+  color: #333; /* Color del texto del título */
+  text-align: center; /* Alinear el título al centro */
+}
+
+.login-content {
+  padding: 20px; /* Espaciado interno del contenido */
+}

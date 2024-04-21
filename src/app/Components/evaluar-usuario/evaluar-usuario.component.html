@@ -1,0 +1,70 @@
+
+<ion-content>
+  <ion-grid [fixed]="false">
+    <ion-row>
+      <ion-col size="4">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Generar preguntas para entrevista</ion-card-title>
+             <ion-card-subtitle>Selecciona el perfil, nivel y nro de preguntas:</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content >
+            <ion-item>
+              <ion-select label="Perfil" placeholder="seleccionar">
+                <ion-select-option value="apple">Dev .Net</ion-select-option>
+                <ion-select-option value="banana">Dev .Java</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-select label="Nivel" placeholder="seleccionar">
+                <ion-select-option value="apple">senior</ion-select-option>
+                <ion-select-option value="banana">semi senior</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-select label="Nro de preguntas" placeholder="seleccionar">
+                <ion-select-option value="apple">senior</ion-select-option>
+                <ion-select-option value="banana">semi senior</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-card-content>
+          <ion-button fill="clear">Generar</ion-button>
+        </ion-card>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+      <ion-col size="6">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Evaluar candidato</ion-card-title>
+            <ion-card-subtitle>Selecciona el perfil, nivel y sube tu video</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item>
+              <ion-select label="Perfil" placeholder="seleccionar">
+                <ion-select-option value="apple">Dev .Net</ion-select-option>
+                <ion-select-option value="banana">Dev .Java</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-select label="Nivel" placeholder="seleccionar">
+                <ion-select-option value="apple">senior</ion-select-option>
+                <ion-select-option value="banana">semi senior</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <br>
+            <ion-item lines="none" class="upload-container">
+              <ion-icon name="cloud-upload-outline" slot="start"></ion-icon>
+              <ion-label stacked>Selecciona o arrastra y suelta un archivo</ion-label>
+              <input type="file" id="fileInput"  accept="video/*" hidden />
+              <label for="fileInput" class="file-label">Seleccionar archivo</label>
+            </ion-item>
+            <div class="drop-zone">
+              <p>Suelta el archivo aquí</p>
+            </div>
+          </ion-card-content>
+          <ion-button fill="clear">Evaluar</ion-button>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
