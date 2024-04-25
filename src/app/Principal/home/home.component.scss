@@ -1,14 +1,18 @@
 *{
-  margin: 0;
   font-family: Barlow,-apple-system,BlinkMacSystemFont,sans-serif;
-  padding: 0;
+
 }
-ion-chip{
-    white-space: nowrap;       /* Evita que el texto se divida en varias líneas */
-    overflow: hidden;          /* Oculta el contenido que sobresale del contenedor */
-    text-overflow: ellipsis;   /* Muestra puntos suspensivos (...) cuando el texto es demasiado largo */
-}
+//menu bar
 .header{
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  button {
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
   width: 100%;
   background-color: #070d1b;
   padding:20px;
@@ -28,7 +32,7 @@ ion-chip{
     text-decoration: none;
     margin: 0 10px;
     border-radius: 5px; /* Elimina el subrayado de los enlaces */
-    padding: 6px;
+    padding: 10px;
   }
   nav a:hover {
     background-color: white;
@@ -85,8 +89,87 @@ ion-chip{
   }
 }
 
-.h1{
-  font-style: normal;
-  font-size: 25px !important;
+//_-
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+button {
+  background-color: white;
+  color: #070d1b;
+  // border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #168B64;
+  color: white;
+}
+
+.ion-color-seccion{
+  --background: #070d1b;
+}
+.ion-card-torre{
+background-color: #21293C;
+border-radius: 35px;
+height: 100%;
+padding: 16px;
+}
+.title-card-torre{
+  padding-top: 15px ;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+.font-card-torres{
+color: white;
+}
+.img-card-torres{
+  max-width: 250px;
+  height: 80px;
+  padding-top: 15px;
+}
+.ion-card-no-border {
+  border-bottom: none; /* Esto elimina la línea inferior */
+  box-shadow: none; /* Esto elimina la sombra */
+}
+ion-card-header{
+padding-bottom: 10% ;
+}
+.color-t{
+  background-color: rgba(0, 0, 0, 0);
+}
+.title-sub{
+font-weight: 700;
+font-size: 2.5em;
+color: white;
+}
+.parrafo-size{
+  font-size: 19px;
+}
+//--
+.centrar-text{
+text-align: center;
+}
+.ion-card-imagePrincipal{
+  display: flex; /* Utiliza flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+.title-sec2{
+  font-weight: 600;
+  font-style: normal;
+  line-height: normal;
+  font-size: 34px;
+  text-align: center;
+  color: white;
+}
+
+.foot{
+  color: white;
+  background-color: #070D1B;
+  padding-top: 15px ;
+}

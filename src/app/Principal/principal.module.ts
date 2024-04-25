@@ -1,25 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthRoutingModule } from './auth-routing.module';
+import {PrincipalRoutingModule } from './principal-routing.module';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LoginComponent } from './login/login.component';
-import { ErrorComponent } from '../Shared/error/error.component';
 import { SharedModule } from '../Shared/shared.module';
+import { ModalLoginComponent } from './home/modal-login/modal-login.component';
+import { HomeComponent } from './home/home.component';
 
 
 
 @NgModule({
   declarations: [
-    LoginComponent,
+    ModalLoginComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
     IonicModule,
-    AuthRoutingModule,
+    PrincipalRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     SharedModule
   ]
 })
-export class AuthModule { }
+export class PrincipalModule { }

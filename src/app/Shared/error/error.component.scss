@@ -1,0 +1,25 @@
+.body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #CCF9F9;
+}
+
+.error-container {
+
+  text-align: center;
+  color: #002556;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+p {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+

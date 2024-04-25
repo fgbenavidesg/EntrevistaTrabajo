@@ -1,0 +1,144 @@
+<header class="header">
+      <h1>CRESTA</h1>
+      <button
+          (click)=" setActive() "
+          class="header__button">
+          <svg class="header__svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+          </svg>
+      </button>
+      <nav
+          class="header__nav"
+          [ngClass]="{ 'header__nav--activo' : active }">
+          <ul class="header__ul">
+              <li class="header__li" ><a href="#">Solutions</a></li>
+              <li class="header__li"><a href="#">Products</a></li>
+              <li class="header__li"><a href="#">Customers</a></li>
+              <li class="header__li"><a href="#">Resources</a></li>
+              <li class="header__li"><button (click)="showModal()">Solicitar un Demo</button></li>
+          </ul>
+      </nav>
+</header>
+<!-- contenido -->
+<ion-content>
+    <ion-row class="ion-justify-content-center" style="background: url('assets/banner.svg'); background-repeat: no-repeat; background-size:cover !important ; height: 100%;">
+      <!-- primera seccion -->
+      <ion-col sizeXl="5" sizeLg="6" sizeMd="8" sizeSm="8" sizeXs="12"  class="ion-card-imagePrincipal">
+        <ion-card class="color-t ion-card-no-border">
+          <ion-card-header>
+            <ion-card-title class="title-sub centrar-text" >Reinvent the contact center, with</ion-card-title>
+            <ion-card-subtitle class="title-sub centrar-text">enterprise-grade generative AI</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content  class="ion-text-center parrafo-size" style="color: white;" >
+              Pinpoint the true drivers of performance, dramatically cut
+              costs with targeted automation, and empower every employee to
+              work smarter and faster with AI-native co-pilots, QM, and coaching,
+              trained on your data.
+          </ion-card-content>
+          <ion-card-content class="ion-text-center ">
+            <button  (click)="showModal()" >Solicitar Demo</button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <!-- imagen segundo contenido -->
+      <ion-col sizeXl="5" sizeLg="6" sizeMd="8" sizeSm="8" sizeXs="12" class="ion-card-imagePrincipal">
+        <ion-card  class="color-t ion-card-no-border ">
+          <ion-card-content class="ion-padding " >
+          <img  alt="Silhouette of mountains"  src="./assets/call.webp"  height="300px"/>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+     <!-- segunda  seccion -->
+      <ion-row  class="ion-justify-content-center " style="background: #070D1B;">
+        <ion-col sizeXl="9" sizeMd="10" >
+          <ion-card class="ion-card-no-border" style="background: #070D1B;">
+            <ion-card-header>
+              <ion-card-title class="title-sec2">La plataforma de IA de extremo a extremo en la que confían los centros de contacto líderes del mundo</ion-card-title>
+            </ion-card-header>
+            <ion-card-content class="ion-text-center">
+              <ion-row class="ion-justify-content-center">
+                <ion-col sizeLg="3" sizeSm="6" sizeXs="12">
+                  <img alt="stat1"  src="./assets/stat1.svg" />
+                </ion-col>
+                <ion-col sizeLg="3" sizeSm="6" sizeXs="12">
+                  <img alt="stat2" src="./assets/stat2.svg" />
+                </ion-col>
+                <ion-col sizeLg="3" sizeSm="6" sizeXs="12">
+                  <img alt="stat3" src="./assets/stat3.svg" />
+                </ion-col>
+                <ion-col sizeLg="3" sizeSm="6" sizeXs="12">
+                  <img alt="stat4" src="./assets/stat4.svg" />
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+            <ion-card-content class="ion-text-center parrafo-size ion-padding font-card-torres">
+              Cresta analiza cada conversación, descubre conocimientos de los clientes y mejores
+              prácticas de comportamiento que conducen a mejores resultados comerciales e impulsa
+              resultados potentes con una única plataforma unificada para control de calidad nativo de IA,
+              asesoramiento y asistencia a los agentes en tiempo real.
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+    <!-- tercera seccion -->
+    <ion-row class="ion-justify-content-center" style="background: #070D1B; padding-bottom:20px;">
+      <ion-col sizeXl="3" sizeLg="4" sizeMd="6" sizeSm="8" sizeXs="10">
+        <ion-card class=" ion-card-torre" >
+          <ion-card-header>
+            <img class="img-card-torres" alt="torre3" src="./assets/torre1.svg" />
+            <ion-card-title class="title-card-torre font-card-torres">IA personalizada adaptada a su negocio</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="parrafo-size font-card-torres">
+            Cada negocio es único. Los modelos de última generación
+             de Cresta se basan en sus datos para desarrollar una
+             comprensión contextual avanzada de sus clientes,
+             agentes y procesos.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col sizeXl="3" sizeLg="4" sizeMd="6" sizeSm="8" sizeXs="10">
+        <ion-card class=" ion-card-torre">
+          <ion-card-header>
+            <img class="img-card-torres" alt="torre2" src="./assets/torre2.svg" />
+            <ion-card-title class="title-card-torre font-card-torres">Implemente IA con clics, no con código</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="parrafo-size font-card-torres">
+            Tu negocio nunca deja de evolucionar. Capacite a los
+            líderes no técnicos para que capaciten, prueben e implementen modelos
+            de IA que conviertan los conocimientos en acción con un centro
+            de comando intuitivo y sin código.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col  sizeXl="3" sizeLg="4" sizeMd="6" sizeSm="8" sizeXs="10">
+        <ion-card class="ion-card-torre">
+          <ion-card-header>
+            <img class="img-card-torres" alt="torre3" src="./assets/torre3.svg" />
+            <ion-card-title class="title-card-torre font-card-torres">La mejor IA en tiempo real de su clase</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="parrafo-size font-card-torres">
+            La orientación en tiempo real simplemente no funciona
+            cuando el paso es demasiado lento. La arquitectura escalable
+            de Cresta ofrece transcripción e inferencia de latencia ultrabaja
+            a la velocidad de la conversación humana.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-footer >
+      <ion-toolbar >
+        <ion-row class="foot ion-justify-content-center">
+          <ion-col size="12" size-md="6" >
+            <div class="ion-text-center">
+            <img src="assets/ide-logo.png" alt="logo" width="65px">
+            </div>
+            <p class="ion-text-center ">© 2024 Ide Solution</p>
+            <p class="ion-text-center ">Todos los derechos reservados</p>
+          </ion-col>
+        </ion-row>
+      </ion-toolbar>
+    </ion-footer>
+</ion-content>
+

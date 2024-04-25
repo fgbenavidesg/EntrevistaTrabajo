@@ -1,70 +1,108 @@
-
 <ion-content>
-  <ion-grid [fixed]="false">
-    <ion-row>
-      <ion-col size="4">
-        <ion-card>
+    <ion-row class="ion-justify-content-center ">
+      <ion-col  sizeXs="12" sizeSm="8" sizeMd="7" sizeLg="5" sizeXl="4"  >
+        <ion-card [formGroup]="preguntasForm"  style="height: 100%;">
+          <div class="contImg ion-text-center">
+            <img class="img-card-torres" class="" src="assets/result.jpg" alt="img" style="border-radius: 15px;">
+          </div>
           <ion-card-header>
-            <ion-card-title>Generar preguntas para entrevista</ion-card-title>
-             <ion-card-subtitle>Selecciona el perfil, nivel y nro de preguntas:</ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content >
-            <ion-item>
-              <ion-select label="Perfil" placeholder="seleccionar">
-                <ion-select-option value="apple">Dev .Net</ion-select-option>
-                <ion-select-option value="banana">Dev .Java</ion-select-option>
-              </ion-select>
-            </ion-item>
-            <ion-item>
-              <ion-select label="Nivel" placeholder="seleccionar">
-                <ion-select-option value="apple">senior</ion-select-option>
-                <ion-select-option value="banana">semi senior</ion-select-option>
-              </ion-select>
-            </ion-item>
-            <ion-item>
-              <ion-select label="Nro de preguntas" placeholder="seleccionar">
-                <ion-select-option value="apple">senior</ion-select-option>
-                <ion-select-option value="banana">semi senior</ion-select-option>
-              </ion-select>
-            </ion-item>
-          </ion-card-content>
-          <ion-button fill="clear">Generar</ion-button>
-        </ion-card>
-      </ion-col>
-      <ion-col size="2"></ion-col>
-      <ion-col size="6">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>Evaluar candidato</ion-card-title>
-            <ion-card-subtitle>Selecciona el perfil, nivel y sube tu video</ion-card-subtitle>
+             <ion-card-subtitle>Top retailer has seen 5% increase in NPS per quarter ever since implementing Cresta</ion-card-subtitle>
           </ion-card-header>
           <ion-card-content>
-            <ion-item>
-              <ion-select label="Perfil" placeholder="seleccionar">
-                <ion-select-option value="apple">Dev .Net</ion-select-option>
-                <ion-select-option value="banana">Dev .Java</ion-select-option>
-              </ion-select>
-            </ion-item>
-            <ion-item>
-              <ion-select label="Nivel" placeholder="seleccionar">
-                <ion-select-option value="apple">senior</ion-select-option>
-                <ion-select-option value="banana">semi senior</ion-select-option>
-              </ion-select>
-            </ion-item>
-            <br>
-            <ion-item lines="none" class="upload-container">
-              <ion-icon name="cloud-upload-outline" slot="start"></ion-icon>
-              <ion-label stacked>Selecciona o arrastra y suelta un archivo</ion-label>
-              <input type="file" id="fileInput"  accept="video/*" hidden />
-              <label for="fileInput" class="file-label">Seleccionar archivo</label>
-            </ion-item>
-            <div class="drop-zone">
-              <p>Suelta el archivo aquí</p>
-            </div>
+            <ion-row class="">
+              <ion-col sizeXs="12" sizeSm="6">
+                <label class="ion-padding">Perfil</label>
+                <select formControlName="perfil" class="custom-select">
+                  <option value="" selected>seleccionar</option>
+                  <option value="Dev Net">net</option>
+                  <option value="Dev Java">semi java</option>
+                </select>
+              </ion-col>
+              <ion-col sizeXs="12" sizeSm="6">
+                <label class="ion-padding">Nivel</label>
+                <select formControlName="nivel" class="custom-select">
+                  <option value="" selected>seleccionar</option>
+                  <option value="senior">senior</option>
+                  <option value="semi senior">semi senior</option>
+                </select>
+              </ion-col>
+              <ion-col sizeMd="12">
+                <label class="ion-padding">Nro de Preguntas</label>
+                <select formControlName="nroPreguntas" class="custom-select">
+                  <option value="" selected>seleccionar</option>
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                </select>
+                </ion-col>
+            </ion-row>
           </ion-card-content>
-          <ion-button fill="clear">Evaluar</ion-button>
+          <ion-button fill="clear" (click)="generarPregunta()" >Generar</ion-button>
+        </ion-card>
+      </ion-col>
+      <ion-col  sizeXs="12" sizeSm="8" sizeMd="7" sizeLg="5" sizeXl="4" >
+        <ion-card [formGroup]="evaluarForm" style="height: 100%;">
+          <div class="contImg ion-text-center">
+            <img class="img-card-torres" class="" src="assets/result.jpg" alt="img" style="border-radius: 15px;">
+          </div>
+          <ion-card-header>
+             <ion-card-subtitle>Top retailer has seen 5% increase in NPS per quarter ever since implementing Cresta</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-row class="">
+              <ion-col sizeXs="12" sizeSm="6">
+                <label class="ion-padding">Perfil</label>
+                <select formControlName="perfil_evaluar" class="custom-select">
+                  <option value="" selected>seleccionar</option>
+                  <option value="Dev Net">net</option>
+                  <option value="Dev Java">semi java</option>
+                </select>
+              </ion-col>
+              <ion-col sizeXs="12" sizeSm="6">
+                <label class="ion-padding">Nivel</label>
+                <select formControlName="nivel_evaluar" class="custom-select">
+                  <option value="" selected>seleccionar</option>
+                  <option value="senior">senior</option>
+                  <option value="semi senior">semi senior</option>
+                </select>
+              </ion-col>
+              <ion-col sizeXs="12" sizesm="6">
+                <ion-item lines="none" class="upload-container">
+                  <ion-icon name="cloud-upload-outline"></ion-icon>
+                  <label stacked class="label-pr">Selecciona o arrastra y suelta un archivo</label>
+                  <input #fileInput type="file" id="fileInput"  accept="video/*"   (change)="fileInputChange($event)" hidden />
+                  <label for="fileInput" class="file-label">Seleccionar archivo</label>
+                </ion-item>
+                <div class="drop-zone">
+                  <p>Suelta el archivo aquí</p>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+          <ion-button fill="clear"  >Evaluar</ion-button>
         </ion-card>
       </ion-col>
     </ion-row>
-  </ion-grid>
+    <ion-row class="ion-justify-content-center ">
+      <ion-col sizeXs="12" sizeSm="8" sizeMd="7" sizeLg="5" sizeXl="4" >
+        <ion-card *ngIf="respuestas" class="ion-text-center">
+          <ion-card-header>
+            <ion-card-title>Preguntas Generadas</ion-card-title>
+            <ion-card-subtitle>una descripcion</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list>
+              <ion-item *ngFor="let respuesta of respuestas">
+                <ion-label>{{respuesta}}</ion-label>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+          <ion-button (click)="generatePDF()" fill="clear" >
+            <ion-icon slot="start" name="cloud-download-outline"></ion-icon>
+             Descargar PDF
+          </ion-button>
+        </ion-card>
+      </ion-col>
+      <ion-col sizeXs="12" sizeSm="8" sizeMd="7" sizeLg="5" sizeXl="4" ></ion-col>
+    </ion-row>
 </ion-content>

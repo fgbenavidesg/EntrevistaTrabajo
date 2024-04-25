@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModalService } from 'src/app/utils/modal.service';
 declare var google: any;
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  selector: 'app-modal-login',
+  templateUrl: './modal-login.component.html',
+  styleUrls: ['./modal-login.component.scss'],
 })
-export class LoginComponent  implements OnInit {
+export class ModalLoginComponent  implements OnInit {
 
   constructor(
     private router : Router,
-
+    private modalSvc: ModalService,
   ) { }
 
   ngOnInit() {
@@ -33,10 +34,15 @@ export class LoginComponent  implements OnInit {
       //decode token
       const contToken = this.decodeToken(response.credential);
       //store in session
-      sessionStorage.setItem("userToken",JSON.stringify(contToken));
+      sessionStorage.setItem("nombre",contToken.name);
+      sessionStorage.setItem("img",contToken.picture);
+      //cerrar modal
+      this.cerrarModal();
       //navigate to home/
-      this.router.navigate(['/entrevista/home']);
+      this.router.navigate(['/entrevista/evaluar-usuario']);
     }
   }
-
+  cerrarModal() {
+    return this.modalSvc.cancel();
+  }
 }
