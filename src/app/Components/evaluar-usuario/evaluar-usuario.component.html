@@ -88,16 +88,14 @@
                     <label class="ion-padding">Perfil</label>
                     <select formControlName="perfil_evaluar" class="custom-select" >
                       <option value="" selected>seleccionar</option>
-                      <option value="Dev Net">net</option>
-                      <option value="Dev Java">semi java</option>
+                      <option *ngFor="let perfil of perfiles" [value]="perfil">{{ perfil }}</option>
                     </select>
                   </ion-col>
                   <ion-col sizeXs="12" sizeSm="6">
                     <label class="ion-padding">Nivel</label>
                     <select formControlName="nivel_evaluar" class="custom-select">
                       <option value="" selected>seleccionar</option>
-                      <option value="senior">senior</option>
-                      <option value="semi senior">semi senior</option>
+                    <option *ngFor="let nivel of niveles" [value]="nivel">{{ nivel }}</option>
                     </select>
                   </ion-col>
                   <ion-col sizeXs="12" sizesm="6">
