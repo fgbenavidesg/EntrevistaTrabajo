@@ -84,6 +84,11 @@
               </ion-card-header>
               <ion-card-content>
                 <ion-row class="">
+                  <ion-col size="12">
+                      <ion-item  style="--border-style: solid;">
+                        <ion-input label="Candidato :" placeholder="Nombre/Apellidos" formControlName="candidato" maxlength="50"></ion-input>
+                      </ion-item>
+                  </ion-col>
                   <ion-col sizeXs="12" sizeSm="6">
                     <label class="ion-padding">Perfil</label>
                     <select formControlName="perfil_evaluar" class="custom-select" >
@@ -98,6 +103,7 @@
                     <option *ngFor="let nivel of niveles" [value]="nivel">{{ nivel }}</option>
                     </select>
                   </ion-col>
+
                   <ion-col sizeXs="12" sizesm="6">
                     <ion-item lines="none" class="upload-container">
                       <ion-icon name="cloud-upload-outline"></ion-icon>
@@ -111,7 +117,7 @@
                       <p *ngIf="!isFileSelected" >Suelta el archivo aquí</p>
                       <div *ngIf="isFileSelected" class="">
                         <img src="{{videoIconPath}}" class="video-icon" alt="video">
-                        <ion-fab  slot="fixed" class="fab-x" (click)="resetFile()" disabled>
+                        <ion-fab  slot="fixed" class="fab-x" (click)="resetFile()" >
                           <ion-fab-button size="small">
                             <ion-icon name="close-outline"></ion-icon>
                           </ion-fab-button>
@@ -124,7 +130,7 @@
                   </ion-col>
                 </ion-row>
               </ion-card-content>
-              <ion-button fill="clear" (click)="ValidarRespuestas()" disabled >Evaluar</ion-button>
+              <ion-button fill="clear" (click)="ValidarRespuestas()" disabled="" >Evaluar</ion-button>
             </ion-card>
         </ion-col>
       </ion-row>

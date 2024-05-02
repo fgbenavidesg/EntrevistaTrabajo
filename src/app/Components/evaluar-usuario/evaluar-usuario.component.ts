@@ -87,6 +87,7 @@ export class EvaluarUsuarioComponent  implements OnInit {
     return this.formBuilder.group({
       perfil_evaluar: [{ value: '', disabled: true }, Validators.required],
       nivel_evaluar: [{ value: '', disabled: true }, Validators.required],
+      candidato:[{ value: '', disabled: true }, Validators.required],
     });
   }
 //Logica de manejo de video
@@ -180,7 +181,8 @@ onDrop(event: DragEvent) {
                 if(resp){
                   this.evaluacion = resp;
                   if(this.evaluacion){
-                    this.generateResultadosPDF(this.evaluacion);
+                   this.generateResultadosPDF(this.evaluacion);
+                   this.evaluarForm.reset();
                   }
                 }
                }
@@ -191,7 +193,8 @@ onDrop(event: DragEvent) {
       }
     );
   }
-  generateResultadosPDF( evaluacion : EvaluarResponse ){
+  generateResultadosPDF(evaluacion : EvaluarResponse ){
+    let candidato = this.evaluarForm.value.candidato;
     this.gmail = localStorage.getItem('gmail')!;
     const fecha = new Date().toISOString().slice(0, 10).replace(/-/g, '');
     const nombreArchivo = `AI_INTERVIEWER_ResultadoEvaluacion_${fecha}`;
@@ -201,12 +204,12 @@ onDrop(event: DragEvent) {
         correos_to: this.gmail,
         correo_cc: "",
         correo_cco: "",
-        asunto:"AI INTERVIEWER-Resultado de Evaluación",
-        mensaje:"<h2>Estimado usuario,</h2>"
-                 +"<p>Espero que estés teniendo un gran día.</p>"
-                 +"<p>Quería compartir contigo los resultados de la evaluación de tu candidato que completaste recientemente:</p>"
-                 +"<p>Por favor, descarga el PDF adjunto para ver el resultado.</p>"
-                 +"<p>¡Gracias por tu participación y esfuerzo!</p>"
+        asunto:"Resultado de entrevista del candidato "+ candidato.toUpperCase() + " - " + evaluacion.resultado,
+        mensaje:"<h3>Estimado usuario,</h3>"
+                 +"<p>Nombre del candidato: "+ candidato.toUpperCase() +".</p>"
+                 +"<p>Resultado: "+evaluacion.resultado+ ".</p>"
+                 +"<p>Justificación:" +evaluacion.criterios +"</p>"
+                 +"<p>Saludos,<br/>¡Que tengas un excelente día!</p>"
                  +"<p>Atentamente,<br/>AI INTERVIEWER</p>",
         nombre_config:environment.nombre_config_correo,
         adjuntos: [
@@ -223,11 +226,6 @@ onDrop(event: DragEvent) {
     }
    )
   }
-  // ejemplo: EvaluarResponse = {
-  //   criterios: "Experiencia laboral",
-  //   feedback: "El candidato tiene una experiencia relevante en el campo.",
-  //   resultado: "Cumple"
-  // };
 //Logica de generar preguntas
   public generarPregunta(){
     let perfil = this.preguntasForm.value.perfil;
@@ -246,6 +244,7 @@ onDrop(event: DragEvent) {
       (resp)=>{
         if(resp){
           this.respuestas=resp;
+          this.preguntasForm.reset();
         }
       }
     )
