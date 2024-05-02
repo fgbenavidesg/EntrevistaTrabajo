@@ -1,108 +1,144 @@
-<ion-content>
-    <ion-row class="ion-justify-content-center ">
-      <ion-col  sizeXs="12" sizeSm="8" sizeMd="7" sizeLg="5" sizeXl="4"  >
-        <ion-card [formGroup]="preguntasForm"  style="height: 100%;">
-          <div class="contImg ion-text-center">
-            <img class="img-card-torres" class="" src="assets/result.jpg" alt="img" style="border-radius: 15px;">
-          </div>
-          <ion-card-header>
-             <ion-card-subtitle>Top retailer has seen 5% increase in NPS per quarter ever since implementing Cresta</ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-row class="">
-              <ion-col sizeXs="12" sizeSm="6">
-                <label class="ion-padding">Perfil</label>
-                <select formControlName="perfil" class="custom-select">
-                  <option value="" selected>seleccionar</option>
-                  <option value="Dev Net">net</option>
-                  <option value="Dev Java">semi java</option>
-                </select>
-              </ion-col>
-              <ion-col sizeXs="12" sizeSm="6">
-                <label class="ion-padding">Nivel</label>
-                <select formControlName="nivel" class="custom-select">
-                  <option value="" selected>seleccionar</option>
-                  <option value="senior">senior</option>
-                  <option value="semi senior">semi senior</option>
-                </select>
-              </ion-col>
-              <ion-col sizeMd="12">
-                <label class="ion-padding">Nro de Preguntas</label>
-                <select formControlName="nroPreguntas" class="custom-select">
-                  <option value="" selected>seleccionar</option>
-                  <option value="5">5</option>
-                  <option value="10">10</option>
-                  <option value="15">15</option>
-                </select>
+<ion-content >
+      <ion-segment [(ngModel)]="segmentValue"  color="dark" >
+        <ion-segment-button  value="segment1" class="segment-btn"  color="dark">
+          Generar Preguntas
+        </ion-segment-button>
+
+        <ion-segment-button value="segment2" class="segment-btn" color="dark" style="margin-left: 5px;">
+          Evaluar Candidato
+        </ion-segment-button>
+      </ion-segment>
+
+      <!-- Contenido del Segmento 1 -->
+      <ion-row *ngIf="segmentValue === 'segment1'" class="ion-justify-content-center" >
+        <ion-col sizeXs="12" sizeSm="8" sizeMd="7" sizeLg="5" sizeXl="4">
+          <ion-card [formGroup]="preguntasForm"  >
+            <div class="contImg ion-text-center">
+              <img class="img-card-torres" class="" src="assets/banner-1.png" alt="img" style="border-radius: 15px;">
+            </div>
+            <ion-card-header>
+               <ion-card-subtitle>Elige el perfil y nivel del candidato, junto con la cantidad adecuada de preguntas, para obtener una evaluación precisa.</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-row class="">
+                <ion-col sizeXs="12" sizeSm="6">
+                  <label class="ion-padding">Perfil</label>
+                  <select formControlName="perfil" class="custom-select">
+                    <option value="" selected>seleccionar</option>
+                    <option *ngFor="let perfil of perfiles" [value]="perfil">{{ perfil }}</option>
+                  </select>
                 </ion-col>
-            </ion-row>
-          </ion-card-content>
-          <ion-button fill="clear" (click)="generarPregunta()" >Generar</ion-button>
-        </ion-card>
-      </ion-col>
-      <ion-col  sizeXs="12" sizeSm="8" sizeMd="7" sizeLg="5" sizeXl="4" >
-        <ion-card [formGroup]="evaluarForm" style="height: 100%;">
-          <div class="contImg ion-text-center">
-            <img class="img-card-torres" class="" src="assets/result.jpg" alt="img" style="border-radius: 15px;">
-          </div>
-          <ion-card-header>
-             <ion-card-subtitle>Top retailer has seen 5% increase in NPS per quarter ever since implementing Cresta</ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-row class="">
-              <ion-col sizeXs="12" sizeSm="6">
-                <label class="ion-padding">Perfil</label>
-                <select formControlName="perfil_evaluar" class="custom-select">
-                  <option value="" selected>seleccionar</option>
-                  <option value="Dev Net">net</option>
-                  <option value="Dev Java">semi java</option>
-                </select>
-              </ion-col>
-              <ion-col sizeXs="12" sizeSm="6">
-                <label class="ion-padding">Nivel</label>
-                <select formControlName="nivel_evaluar" class="custom-select">
-                  <option value="" selected>seleccionar</option>
-                  <option value="senior">senior</option>
-                  <option value="semi senior">semi senior</option>
-                </select>
-              </ion-col>
-              <ion-col sizeXs="12" sizesm="6">
-                <ion-item lines="none" class="upload-container">
-                  <ion-icon name="cloud-upload-outline"></ion-icon>
-                  <label stacked class="label-pr">Selecciona o arrastra y suelta un archivo</label>
-                  <input #fileInput type="file" id="fileInput"  accept="video/*"   (change)="fileInputChange($event)" hidden />
-                  <label for="fileInput" class="file-label">Seleccionar archivo</label>
+                <ion-col sizeXs="12" sizeSm="6">
+                  <label class="ion-padding">Nivel</label>
+                  <select formControlName="nivel" class="custom-select">
+                    <option value="" selected>seleccionar</option>
+                    <option *ngFor="let nivel of niveles" [value]="nivel">{{ nivel }}</option>
+                  </select>
+                </ion-col>
+                <ion-col sizeMd="12">
+                  <label class="ion-padding">Nro de Preguntas</label>
+                  <select formControlName="nroPreguntas" class="custom-select">
+                    <option value="" selected>seleccionar</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                  </select>
+                  </ion-col>
+              </ion-row>
+            </ion-card-content>
+            <ion-button fill="clear" (click)="generarPregunta()" >Generar</ion-button>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12"></ion-col>
+        <ion-col  *ngIf="respuestas" sizeXs="12" sizeSm="8" sizeMd="7" sizeLg="5" sizeXl="4" >
+          <ion-card  class="ion-text-center">
+            <ion-card-header>
+              <ion-card-title>Preguntas Generadas</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-list>
+                <ion-item *ngFor="let respuesta of respuestas.respuestas">
+                  <ion-label>{{respuesta.id}}. {{respuesta.descripcion}}</ion-label>
                 </ion-item>
-                <div class="drop-zone">
-                  <p>Suelta el archivo aquí</p>
-                </div>
-              </ion-col>
-            </ion-row>
-          </ion-card-content>
-          <ion-button fill="clear"  >Evaluar</ion-button>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-    <ion-row class="ion-justify-content-center ">
-      <ion-col sizeXs="12" sizeSm="8" sizeMd="7" sizeLg="5" sizeXl="4" >
-        <ion-card *ngIf="respuestas" class="ion-text-center">
-          <ion-card-header>
-            <ion-card-title>Preguntas Generadas</ion-card-title>
-            <ion-card-subtitle>una descripcion</ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-list>
-              <ion-item *ngFor="let respuesta of respuestas">
-                <ion-label>{{respuesta}}</ion-label>
-              </ion-item>
-            </ion-list>
-          </ion-card-content>
-          <ion-button (click)="generatePDF()" fill="clear" >
-            <ion-icon slot="start" name="cloud-download-outline"></ion-icon>
-             Descargar PDF
-          </ion-button>
-        </ion-card>
-      </ion-col>
-      <ion-col sizeXs="12" sizeSm="8" sizeMd="7" sizeLg="5" sizeXl="4" ></ion-col>
-    </ion-row>
+              </ion-list>
+            </ion-card-content>
+            <ion-button (click)="generatePreguntasPDF()" fill="clear" >
+              <ion-icon slot="start" name="cloud-download-outline"></ion-icon>
+               Descargar PDF
+            </ion-button>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+      <!-- Contenido del Segmento 2 -->
+      <ion-row *ngIf="segmentValue === 'segment2'" class="ion-justify-content-center"   >
+        <ion-col sizeXs="12" sizeSm="8" sizeMd="7" sizeLg="5" sizeXl="4">
+            <ion-card [formGroup]="evaluarForm" >
+              <div class="contImg ion-text-center">
+                <img class="img-card-torres" class="" src="assets/banner-2.png" alt="img" style="border-radius: 15px;">
+              </div>
+              <div class="overlay d-flex justify-content-center align-items-center">
+                <p style="color: white; font-size: 16px; font-weight: 600; text-align: center; padding: 10px;">comunircarse con nosotros para habilitar esta opción</p>
+              </div>
+              <ion-card-header>
+                 <ion-card-subtitle>Elige el perfil, nivel y adjunta el video de la entrevista para su evaluación. Nuestro Módulo analiza automáticamente la entrevista, evaluando el discurso y actitud del candidato.</ion-card-subtitle>
+              </ion-card-header>
+              <ion-card-content>
+                <ion-row class="">
+                  <ion-col sizeXs="12" sizeSm="6">
+                    <label class="ion-padding">Perfil</label>
+                    <select formControlName="perfil_evaluar" class="custom-select" >
+                      <option value="" selected>seleccionar</option>
+                      <option value="Dev Net">net</option>
+                      <option value="Dev Java">semi java</option>
+                    </select>
+                  </ion-col>
+                  <ion-col sizeXs="12" sizeSm="6">
+                    <label class="ion-padding">Nivel</label>
+                    <select formControlName="nivel_evaluar" class="custom-select">
+                      <option value="" selected>seleccionar</option>
+                      <option value="senior">senior</option>
+                      <option value="semi senior">semi senior</option>
+                    </select>
+                  </ion-col>
+                  <ion-col sizeXs="12" sizesm="6">
+                    <ion-item lines="none" class="upload-container">
+                      <ion-icon name="cloud-upload-outline"></ion-icon>
+                      <label stacked class="label-pr">Selecciona o arrastra y suelta un archivo</label>
+                      <input #fileInput type="file" id="fileInput"  accept="video/*" (change)="fileInputChange($event)" hidden disabled/>
+                      <label  for="fileInput" class="file-label" disabled>Seleccionar archivo</label>
+                    </ion-item>
+                    <div class="drop-zone" id="dropArea"
+                      (dragover)="onDragOver($event)"
+                      (drop)="onDrop($event)" disabled>
+                      <p *ngIf="!isFileSelected" >Suelta el archivo aquí</p>
+                      <div *ngIf="isFileSelected" class="">
+                        <img src="{{videoIconPath}}" class="video-icon" alt="video">
+                        <ion-fab  slot="fixed" class="fab-x" (click)="resetFile()" disabled>
+                          <ion-fab-button size="small">
+                            <ion-icon name="close-outline"></ion-icon>
+                          </ion-fab-button>
+                        </ion-fab>
+                        <div>
+                          <span>{{ selectedFileName }}</span>
+                        </div>
+                      </div>
+                    </div >
+                  </ion-col>
+                </ion-row>
+              </ion-card-content>
+              <ion-button fill="clear" (click)="ValidarRespuestas()" disabled >Evaluar</ion-button>
+            </ion-card>
+        </ion-col>
+      </ion-row>
+
+  <!-- Botón flotante para WhatsApp -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="success" (click)="presentPopover()" style="margin-right: 20px; margin-bottom: 20px;">
+      <ion-icon name="logo-whatsapp" style="color: white;"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- Componente del footer -->
+  <app-footer></app-footer>
 </ion-content>
+

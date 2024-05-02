@@ -8,7 +8,7 @@ export class AutServiceLogic {
   constructor() { }
 
   getStorage( value : string ): string{
-    return sessionStorage.getItem(value) ?? '';
+    return localStorage.getItem(value) ?? '';
   }
 
 }

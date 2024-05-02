@@ -14,6 +14,7 @@ export class ModalService {
 
     const modal = await this.modalCtrl.create({
       component: insertComponent,
+
     });
 
     await modal.present();

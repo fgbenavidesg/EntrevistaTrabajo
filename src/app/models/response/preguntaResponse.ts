@@ -1,4 +1,11 @@
 export interface PreguntaResponse {
-  //response: string[] ;
-  response: string;
+  respuestas?: Respuesta[];
+  codigo: number,
+  descripcion: string,
+  mensaje:string,
 }
+export interface Respuesta {
+  id: number;
+  descripcion: string;
+}
+

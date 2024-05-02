@@ -1,50 +1,47 @@
-<header class="header">
-      <h1>CRESTA</h1>
-      <button
-          (click)=" setActive() "
-          class="header__button">
-          <svg class="header__svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-          </svg>
-      </button>
-      <nav
-          class="header__nav"
-          [ngClass]="{ 'header__nav--activo' : active }">
-          <ul class="header__ul">
-              <li class="header__li" ><a href="#">Solutions</a></li>
-              <li class="header__li"><a href="#">Products</a></li>
-              <li class="header__li"><a href="#">Customers</a></li>
-              <li class="header__li"><a href="#">Resources</a></li>
-              <li class="header__li"><button (click)="showModal()">Solicitar un Demo</button></li>
-          </ul>
-      </nav>
-</header>
 <!-- contenido -->
 <ion-content>
-    <ion-row class="ion-justify-content-center" style="background: url('assets/banner.svg'); background-repeat: no-repeat; background-size:cover !important ; height: 100%;">
+  <header class="header ">
+    <a style="font-weight: 600;" class="titulo" href="/home">AI Interviewer</a>
+    <button
+        (click)=" setActive() "
+        class="header__button">
+        <svg class="header__svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+        </svg>
+    </button>
+    <nav
+        class="header__nav"
+        [ngClass]="{ 'header__nav--activo' : active }">
+        <ul class="header__ul">
+            <li class="header__li"><button class="btn-a" (click)="ValidateSession()">Producto</button></li>
+            <li class="header__li"><a href="/home#footer" (click)="scrollToBottom()">Contáctenos</a></li>
+            <li class="header__li"><button class="btn-demo" (click)="ValidateSession()">Accede al Demo</button></li>
+        </ul>
+    </nav>
+</header>
+    <ion-row class="ion-justify-content-center" style="background-image: linear-gradient(80deg, #363572 20%, #3B72C4 50%, #2A9696 100%);">
       <!-- primera seccion -->
-      <ion-col sizeXl="5" sizeLg="6" sizeMd="8" sizeSm="8" sizeXs="12"  class="ion-card-imagePrincipal">
-        <ion-card class="color-t ion-card-no-border">
-          <ion-card-header>
-            <ion-card-title class="title-sub centrar-text" >Reinvent the contact center, with</ion-card-title>
-            <ion-card-subtitle class="title-sub centrar-text">enterprise-grade generative AI</ion-card-subtitle>
+      <ion-col sizeXl="5" sizeLg="6" sizeMd="8" sizeSm="8" sizeXs="12"  class="ion-card-imagePrincipal" style=" height: 100%">
+        <ion-card class="color-t ion-card-no-border" >
+          <ion-card-header class="ion-header-space">
+            <ion-card-title class="title-sub ion-text-center" >Acelera tus Entrevistas con AI Interviewer: Generación de Preguntas y Evaluación de Candidatos, Utilizando Inteligencia Artificial</ion-card-title>
           </ion-card-header>
-          <ion-card-content  class="ion-text-center parrafo-size" style="color: white;" >
-              Pinpoint the true drivers of performance, dramatically cut
-              costs with targeted automation, and empower every employee to
-              work smarter and faster with AI-native co-pilots, QM, and coaching,
-              trained on your data.
+          <ion-card-content  class="ion-text-center parrafo" style="color: white;" >
+            ¡Únete a la revolución en la selección de personal con AI Interviewer!
+            Descubre cómo nuestras avanzadas capacidades de inteligencia artificial
+            pueden agilizar tus procesos de contratación y garantizar la selección de
+            los mejores talentos. ¡Comienza hoy mismo tu prueba gratuita!
           </ion-card-content>
-          <ion-card-content class="ion-text-center ">
-            <button  (click)="showModal()" >Solicitar Demo</button>
+          <ion-card-content class="ion-text-center">
+            <button  (click)="ValidateSession()"  class="btn-demo">Accede al Demo</button>
           </ion-card-content>
         </ion-card>
       </ion-col>
       <!-- imagen segundo contenido -->
-      <ion-col sizeXl="5" sizeLg="6" sizeMd="8" sizeSm="8" sizeXs="12" class="ion-card-imagePrincipal">
-        <ion-card  class="color-t ion-card-no-border ">
-          <ion-card-content class="ion-padding " >
-          <img  alt="Silhouette of mountains"  src="./assets/call.webp"  height="300px"/>
+      <ion-col sizeXl="5" sizeLg="6" sizeMd="8" sizeSm="8" sizeXs="12" class="ion-card-imagePrincipal" style=" height: 100%">
+        <ion-card  class="color-t ion-card-no-border " >
+          <ion-card-content class="ion-padding img-card " >
+          <img  alt="img"  src="./assets/entrevista.webp"  height="100%"/>
           </ion-card-content>
         </ion-card>
       </ion-col>
@@ -54,91 +51,122 @@
         <ion-col sizeXl="9" sizeMd="10" >
           <ion-card class="ion-card-no-border" style="background: #070D1B;">
             <ion-card-header>
-              <ion-card-title class="title-sec2">La plataforma de IA de extremo a extremo en la que confían los centros de contacto líderes del mundo</ion-card-title>
+              <ion-card-title class="title-sec2">Mejora tus entrevistas de trabajo con AI Interviewer: la herramienta esencial para reclutadores</ion-card-title>
             </ion-card-header>
             <ion-card-content class="ion-text-center">
               <ion-row class="ion-justify-content-center">
-                <ion-col sizeLg="3" sizeSm="6" sizeXs="12">
-                  <img alt="stat1"  src="./assets/stat1.svg" />
+                <ion-col sizeLg="3" sizeMd="5" sizeSm="5" sizeXs="12">
+                  <h2 class="sec2title">x3</h2>
+                  <p class="sec2p">Acelera tus Contrataciones</p>
                 </ion-col>
-                <ion-col sizeLg="3" sizeSm="6" sizeXs="12">
-                  <img alt="stat2" src="./assets/stat2.svg" />
+                <ion-col sizeLg="3" sizeMd="5" sizeSm="5" sizeXs="12">
+                  <h2 class="sec2title">30%</h2>
+                  <p class="sec2p">Eliminación de Sesgos</p>
                 </ion-col>
-                <ion-col sizeLg="3" sizeSm="6" sizeXs="12">
-                  <img alt="stat3" src="./assets/stat3.svg" />
+                <ion-col sizeLg="3" sizeMd="5" sizeSm="5" sizeXs="12">
+                  <h2 class="sec2title">x2</h2>
+                  <p class="sec2p">Calidad de Contrataciones</p>
                 </ion-col>
-                <ion-col sizeLg="3" sizeSm="6" sizeXs="12">
-                  <img alt="stat4" src="./assets/stat4.svg" />
+                <ion-col sizeLg="3" sizeMd="5" sizeSm="5" sizeXs="12">
+                  <h2 class="sec2title">60%</h2>
+                  <p class="sec2p">Ahorro de tiempo</p>
                 </ion-col>
               </ion-row>
             </ion-card-content>
-            <ion-card-content class="ion-text-center parrafo-size ion-padding font-card-torres">
-              Cresta analiza cada conversación, descubre conocimientos de los clientes y mejores
-              prácticas de comportamiento que conducen a mejores resultados comerciales e impulsa
-              resultados potentes con una única plataforma unificada para control de calidad nativo de IA,
-              asesoramiento y asistencia a los agentes en tiempo real.
+            <ion-card-content class="ion-text-center parrafo ion-padding" style="color: white;">
+              Nuestra plataforma utiliza inteligencia artificial para generar preguntas
+              personalizadas para entrevistas, adaptadas específicamente al perfil y nivel de cada candidato.
+              Además, mediante la evaluación de videos de entrevistas, nuestra IA determina de manera precisa
+              sí un candidato es apto o no para el trabajo. Descubre cómo AI Interviewer puede transformar tus
+              entrevistas y optimizar tu proceso de contratación hoy mismo.
             </ion-card-content>
           </ion-card>
         </ion-col>
       </ion-row>
 
     <!-- tercera seccion -->
-    <ion-row class="ion-justify-content-center" style="background: #070D1B; padding-bottom:20px;">
-      <ion-col sizeXl="3" sizeLg="4" sizeMd="6" sizeSm="8" sizeXs="10">
-        <ion-card class=" ion-card-torre" >
-          <ion-card-header>
-            <img class="img-card-torres" alt="torre3" src="./assets/torre1.svg" />
-            <ion-card-title class="title-card-torre font-card-torres">IA personalizada adaptada a su negocio</ion-card-title>
-          </ion-card-header>
-          <ion-card-content class="parrafo-size font-card-torres">
-            Cada negocio es único. Los modelos de última generación
-             de Cresta se basan en sus datos para desarrollar una
-             comprensión contextual avanzada de sus clientes,
-             agentes y procesos.
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col sizeXl="3" sizeLg="4" sizeMd="6" sizeSm="8" sizeXs="10">
+    <ion-row class="ion-justify-content-center" style="background: #070D1B; padding-bottom:40px;" >
+      <ion-col sizeXl="2" sizeLg="3" sizeMd="4" sizeSm="6" sizeXs="8">
         <ion-card class=" ion-card-torre">
+          <div style="text-align: center;">
+            <img src="assets/Recurso1.png" style="height: 70px;" alt="recurso1">
+          </div>
           <ion-card-header>
-            <img class="img-card-torres" alt="torre2" src="./assets/torre2.svg" />
-            <ion-card-title class="title-card-torre font-card-torres">Implemente IA con clics, no con código</ion-card-title>
+            <ion-card-subtitle class="ion-text-center ion-torre-subtitle" >
+              Agendar Entrevista
+            </ion-card-subtitle>
           </ion-card-header>
-          <ion-card-content class="parrafo-size font-card-torres">
-            Tu negocio nunca deja de evolucionar. Capacite a los
-            líderes no técnicos para que capaciten, prueben e implementen modelos
-            de IA que conviertan los conocimientos en acción con un centro
-            de comando intuitivo y sin código.
+          <ion-card-content class="parrafo-size">
+            Elige una plataforma de videollamadas y programa una reunión con el candidato.
           </ion-card-content>
         </ion-card>
       </ion-col>
-      <ion-col  sizeXl="3" sizeLg="4" sizeMd="6" sizeSm="8" sizeXs="10">
-        <ion-card class="ion-card-torre">
+      <ion-col sizeXl="2" sizeLg="3" sizeMd="4" sizeSm="6" sizeXs="8">
+        <ion-card class=" ion-card-torre color-ia">
+          <div style="text-align: center;">
+            <img src="assets/Recurso2.png" style="height: 70px;" alt="recurso1">
+          </div>
           <ion-card-header>
-            <img class="img-card-torres" alt="torre3" src="./assets/torre3.svg" />
-            <ion-card-title class="title-card-torre font-card-torres">La mejor IA en tiempo real de su clase</ion-card-title>
+            <ion-card-subtitle class="ion-text-center ion-torre-subtitle" >
+              Generar Preguntas
+            </ion-card-subtitle>
           </ion-card-header>
-          <ion-card-content class="parrafo-size font-card-torres">
-            La orientación en tiempo real simplemente no funciona
-            cuando el paso es demasiado lento. La arquitectura escalable
-            de Cresta ofrece transcripción e inferencia de latencia ultrabaja
-            a la velocidad de la conversación humana.
+          <ion-card-content class="parrafo-size">
+            Usa el módulo de Entrevista IA para generar preguntas adaptadas a cada perfil y nivel de candidato
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col  sizeXl="2" sizeLg="3" sizeMd="4" sizeSm="6" sizeXs="8">
+        <ion-card class="ion-card-torre">
+          <div style="text-align: center;">
+            <img src="assets/Recurso3.png" style="height: 70px;" alt="recurso1">
+          </div>
+          <ion-card-header>
+            <ion-card-subtitle class="ion-text-center ion-torre-subtitle" >
+              Grabar Entrevista
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content class="parrafo-size ">
+            Realiza la entrevista, con preguntas previamente preparadas, grabá la entrevista para  su revisión posterior.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col  sizeXl="2" sizeLg="3" sizeMd="4" sizeSm="6" sizeXs="8">
+        <ion-card class="ion-card-torre color-ia">
+          <div style="text-align: center;">
+            <img src="assets/Recurso4.png" style="height: 70px;" alt="recurso1">
+          </div>
+          <ion-card-header>
+            <ion-card-subtitle class="ion-text-center ion-torre-subtitle" >
+              Procesar Entrevista
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content class="parrafo-size  ">
+            Procesa el video con la herramienta de IA. Usa técnicas avanzadas de reconocimiento de voz para extraer la información.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col  sizeXl="2" sizeLg="3" sizeMd="4" sizeSm="6" sizeXs="8">
+        <ion-card class="ion-card-torre">
+          <div style="text-align: center;">
+            <img src="assets/Recurso5.png" style="height: 70px;" alt="recurso1">
+          </div>
+          <ion-card-header>
+            <ion-card-subtitle class="ion-text-center ion-torre-subtitle" >
+              Generar Resultados
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content class="parrafo-size">
+            Descarga un informe en PDF con los resultados de la entrevista, visualiza detalles específicos del desempeño de la entrevista.
           </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
-    <ion-footer >
-      <ion-toolbar >
-        <ion-row class="foot ion-justify-content-center">
-          <ion-col size="12" size-md="6" >
-            <div class="ion-text-center">
-            <img src="assets/ide-logo.png" alt="logo" width="65px">
-            </div>
-            <p class="ion-text-center ">© 2024 Ide Solution</p>
-            <p class="ion-text-center ">Todos los derechos reservados</p>
-          </ion-col>
-        </ion-row>
-      </ion-toolbar>
-    </ion-footer>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button  color="success" (click)="presentPopover()" style="margin-right: 20px; margin-bottom: 20px;">
+        <ion-icon style="color: white; " name="logo-whatsapp"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <app-footer></app-footer>
 </ion-content>
 

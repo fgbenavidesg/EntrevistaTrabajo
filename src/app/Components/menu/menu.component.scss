@@ -1,12 +1,21 @@
 *{
   margin: 0;
-  font-family: Barlow,-apple-system,BlinkMacSystemFont,sans-serif;
+  font-family: raleway,-apple-system,BlinkMacSystemFont,sans-serif;
+
   padding: 0;
 }
 ion-chip{
     white-space: nowrap;       /* Evita que el texto se divida en varias líneas */
     overflow: hidden;          /* Oculta el contenido que sobresale del contenedor */
     text-overflow: ellipsis;   /* Muestra puntos suspensivos (...) cuando el texto es demasiado largo */
+}
+.titulo{
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+}
+.header__button{
+  background-color: #21293C;
 }
 .header{
   width: 100%;

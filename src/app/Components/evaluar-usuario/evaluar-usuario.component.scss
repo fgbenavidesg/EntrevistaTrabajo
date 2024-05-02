@@ -1,3 +1,21 @@
+*{
+  font-family: raleway,-apple-system,BlinkMacSystemFont,sans-serif;
+}
+.segment-btn{
+  margin-top: 20px;
+  font-weight: 500;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.6); /* Color semitransparente */
+  pointer-events: none; /* Permite hacer clic a través de la capa */
+}
 //manejo de archivos
 .upload-container {
   width: 100%;
@@ -13,13 +31,22 @@ ion-icon {
   color: #007bff;
   cursor: pointer;
   padding: 5px;
-
 }
-
+h2{
+  font-size: 16px;
+  font-weight: 500;
+  padding-top:8px;
+}
+.p_evaluacion{
+  color: #B6B6B6;
+  font-size: 13px;
+  font-weight: 400;
+  padding-top:2px ;
+}
 .drop-zone {
   border: 2px dashed #007bff;
   border-radius: 8px;
-  padding: 40px;
+  padding: 30px;
   margin-top: 20px;
   text-align: center;
   color: #007bff;
@@ -114,3 +141,16 @@ ion-item {
   flex: 1;
   margin: 10px
 }
+
+//video icon
+.video-icon {
+  width: 75px;
+  margin-right: 8px;
+}
+
+.fab-x{
+margin-right: 20px;
+margin-top: -20px;
+
+}
+

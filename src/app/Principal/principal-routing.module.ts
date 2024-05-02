@@ -12,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    title: 'Ide-Solution Entrevista',
+    title: 'AI Interviewer',
     component: HomeComponent,
   },
   {

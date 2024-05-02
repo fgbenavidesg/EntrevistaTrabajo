@@ -9,7 +9,7 @@ import { EvaluarUsuarioComponent } from './evaluar-usuario/evaluar-usuario.compo
 const childRoutesLayout: Routes = [
   {
     path: 'evaluar-usuario',
-    title: 'Evaluar Usuario',
+    title: 'AI Interviewer - Producto',
     component: EvaluarUsuarioComponent,
   },
   {
@@ -24,7 +24,6 @@ const childRoutesLayout: Routes = [
 const routes: Routes = [
   {
     path: '',
-    title: 'IDE SOLUTION - Gestionar Entrevista',
     component: MenuComponent,
     children: childRoutesLayout,
   },

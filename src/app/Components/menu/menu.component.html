@@ -1,5 +1,5 @@
 <header class="header">
-  <h1>CRESTA</h1>
+  <a style="font-weight: 600;" href="/home" class="titulo">AI Interviewer</a>
   <button
       (click)=" setActive() "
       class="header__button">
@@ -11,17 +11,15 @@
       class="header__nav"
       [ngClass]="{ 'header__nav--activo' : active }">
       <ul class="header__ul">
-          <li class="header__li" ><a href="#">Solutions</a></li>
-          <li class="header__li"><a href="#">Products</a></li>
-          <li class="header__li"><a href="#">Customers</a></li>
-          <li class="header__li"><a href="#">Resources</a></li>
+          <li class="header__li"><a href="/entrevista/evaluar-usuario">Producto</a></li>
+          <li class="header__li"><a href="/entrevista/evaluar-usuario#footer">Contáctenos</a></li>
           <li class="header__li">
             <ion-buttons slot="end">
             <ion-chip id="menuProfile" color="success">
               <ion-avatar>
                 <img alt="Perfil" [src]="userImg" />
               </ion-avatar>
-              <ion-label>{{ user }}</ion-label>
+              <ion-label>{{ user}}</ion-label>
             </ion-chip>
             <!-- menu del perfil -->
             <ion-popover trigger="menuProfile" [dismissOnSelect]="true" size="auto">

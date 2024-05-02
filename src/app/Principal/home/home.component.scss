@@ -1,8 +1,14 @@
 *{
-  font-family: Barlow,-apple-system,BlinkMacSystemFont,sans-serif;
+  font-family: raleway,-apple-system,BlinkMacSystemFont,sans-serif;
 
 }
+.color-ia{
+  background-color: #4b0082 !important;
+}
 //menu bar
+.header__button{
+  background-color: #21293C;
+}
 .header{
   *{
     margin: 0;
@@ -26,7 +32,18 @@
   .header__ul {
       list-style-type: none; /* Elimina los puntos de la lista */
   }
-
+  .header__li .btn-a{
+    color: white;
+    background-color: #070d1b;
+    text-decoration: none;
+    margin: 0 10px;
+    border-radius: 5px; /* Elimina el subrayado de los enlaces */
+    padding: 10px;
+  }
+  nav .btn-a:hover{
+    background-color: white;
+    color: #070d1b;
+  }
   .header__li a {
     color: white;
     text-decoration: none;
@@ -91,11 +108,11 @@
 
 //_-
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
+.titulo{
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
 }
-
 button {
   background-color: white;
   color: #070d1b;
@@ -104,38 +121,21 @@ button {
   padding: 10px 20px;
   cursor: pointer;
 }
-button:hover {
-  background-color: #168B64;
-  color: white;
-}
-
-.ion-color-seccion{
-  --background: #070d1b;
+.btn-demo:hover{
+ background-color: #4b0082 !important;
+ color: white;
 }
 .ion-card-torre{
 background-color: #21293C;
 border-radius: 35px;
 height: 100%;
-padding: 16px;
-}
-.title-card-torre{
-  padding-top: 15px ;
-  font-size: 1.5em;
-  font-weight: 600;
-}
-.font-card-torres{
-color: white;
-}
-.img-card-torres{
-  max-width: 250px;
-  height: 80px;
-  padding-top: 15px;
+padding: 8px;
 }
 .ion-card-no-border {
-  border-bottom: none; /* Esto elimina la línea inferior */
+  border: none; /* Esto elimina la línea inferior */
   box-shadow: none; /* Esto elimina la sombra */
 }
-ion-card-header{
+.ion-header-space{
 padding-bottom: 10% ;
 }
 .color-t{
@@ -143,27 +143,27 @@ padding-bottom: 10% ;
 }
 .title-sub{
 font-weight: 700;
-font-size: 2.5em;
+font-size: 2.2em;
 color: white;
 }
 .parrafo-size{
-  font-size: 19px;
+  font-size: 16px;
+  color: white;
+  text-align: center;
 }
 //--
-.centrar-text{
-text-align: center;
-}
+
 .ion-card-imagePrincipal{
   display: flex; /* Utiliza flexbox */
   justify-content: center; /* Centra horizontalmente */
   align-items: center; /* Centra verticalmente */
 }
-
+.img-card{
+  max-width: 500px;
+}
 .title-sec2{
   font-weight: 600;
-  font-style: normal;
-  line-height: normal;
-  font-size: 34px;
+  font-size: 28px;
   text-align: center;
   color: white;
 }
@@ -172,4 +172,40 @@ text-align: center;
   color: white;
   background-color: #070D1B;
   padding-top: 15px ;
+}
+
+.parrafo{
+font-size: 16px;
+}
+@media only screen and (max-width: 768px) {
+  .title-sub{
+    font-size: 25px;
+    color: white;
+    font-weight: 500;
+  }
+  .title-sec2{
+    font-size: 20px;
+  }
+  .parrafo{
+    font-size: 14px;
+    }
+}
+
+//sec2 -styles
+
+.sec2title{
+  font-size: 80px;
+  color: white;
+  font-weight: 600;
+}
+.sec2p{
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+}
+
+//torre
+.ion-torre-subtitle{
+  color: white;
+  font-size: 16px;
 }

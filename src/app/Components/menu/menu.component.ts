@@ -16,8 +16,8 @@ export class MenuComponent  implements OnInit {
     private storage : AutServiceLogic
   ) {
 
-    this.user = storage.getStorage('nombre');
-    this.userImg = storage.getStorage('img').toString();
+    this.user = storage.getStorage('nombre') || '';
+    this.userImg = storage.getStorage('img').toString() || 'assets/avatar.svg';
   }
 
   ngOnInit() {}
@@ -28,6 +28,7 @@ export class MenuComponent  implements OnInit {
   }
   logout(){
     sessionStorage.clear();
+    localStorage.clear();
     google.accounts.id.disableAutoSelect();
     this.router.navigate(['']);
   }

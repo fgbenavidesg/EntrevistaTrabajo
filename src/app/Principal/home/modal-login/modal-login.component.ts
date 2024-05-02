@@ -34,8 +34,9 @@ export class ModalLoginComponent  implements OnInit {
       //decode token
       const contToken = this.decodeToken(response.credential);
       //store in session
-      sessionStorage.setItem("nombre",contToken.name);
-      sessionStorage.setItem("img",contToken.picture);
+      localStorage.setItem("nombre",contToken.name);
+      localStorage.setItem("img",contToken.picture);
+      localStorage.setItem("gmail",contToken.email);
       //cerrar modal
       this.cerrarModal();
       //navigate to home/
