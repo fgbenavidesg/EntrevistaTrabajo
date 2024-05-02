@@ -89,7 +89,7 @@ export class EvaluarUsuarioLogicService {
         if(resp?.body?.codigo!=="0"){
           console.log(resp?.body?.mensaje)
           this.presentToast(
-            'Error al consumir servicios generales',
+            'Error al enviar el Correo',
             'danger'
           );
           this.loadingService.dismissLoading();
